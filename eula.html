@@ -5,45 +5,819 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>OralPilot End-User License Agreement (EULA)</title>
     <style>
-      :root { --fg:#0b0f14; --muted:#556070; --bg:#ffffff; --card:#f4f6f8; --link:#0a58ca; --hr:#e6e9ee; }
-      body { margin:0; font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); }
-      .wrap { max-width: 860px; margin: 0 auto; padding: 32px 18px 56px; }
-      h1 { font-size: 28px; margin: 0 0 10px; }
-      h2 { font-size: 18px; margin: 26px 0 10px; }
-      p, li { line-height: 1.55; color: var(--muted); }
-      ul { padding-left: 18px; }
-      .card { padding: 14px 16px; border-radius: 14px; background: var(--card); }
+      :root {
+        --fg: #0b0f14;
+        --muted: #4e5a6a;
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --line: #dbe2ea;
+        --link: #0a58ca;
+        --accent: #173b6d;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--fg);
+        background:
+          radial-gradient(1200px 500px at 10% -10%, #eaf0ff 0%, transparent 60%),
+          radial-gradient(900px 400px at 100% -20%, #e6f6ff 0%, transparent 55%),
+          var(--bg);
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 18px 60px;
+      }
+      .hero {
+        background: linear-gradient(145deg, #0f2747, #1a3d6f 65%, #235a94);
+        color: #f3f7ff;
+        border-radius: 18px;
+        padding: 20px 20px 18px;
+        box-shadow: 0 10px 30px rgba(13, 35, 65, 0.28);
+      }
+      .hero h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+        line-height: 1.2;
+      }
+      .hero p {
+        margin: 0;
+        color: #d5e4ff;
+        line-height: 1.45;
+      }
+      .meta {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .chip {
+        font-size: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #e7efff;
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .panel {
+        margin-top: 14px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+      }
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .toolbar {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+      label { font-weight: 600; }
+      select {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 8px 10px;
+        background: #fff;
+        color: var(--fg);
+      }
+      .locale {
+        margin-top: 16px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+      }
+      .locale[hidden] { display: none; }
+      .locale h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+        color: var(--accent);
+      }
+      .locale h3 {
+        margin: 20px 0 8px;
+        font-size: 17px;
+      }
+      .locale p,
+      .locale li {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .locale ul {
+        margin: 8px 0 0;
+        padding-left: 20px;
+      }
+      .locale li + li { margin-top: 6px; }
+      .footer {
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .footer a { color: var(--link); }
       a { color: var(--link); }
-      hr { border:0; border-top:1px solid var(--hr); margin: 22px 0; }
-      .small { font-size: 13px; }
+      .rtl { direction: rtl; }
+      @media (max-width: 640px) {
+        .hero h1 { font-size: 24px; }
+        .locale h2 { font-size: 21px; }
+      }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <h1>End-User License Agreement (EULA)</h1>
-      <p class="small">Last updated: 2026-03-04</p>
+      <section class="hero" aria-label="EULA summary">
+        <h1>OralPilot End-User License Agreement (EULA)</h1>
+        <p>
+          This agreement governs your use of the OralPilot iOS application and related in-app purchases.
+          It is available in all app locales and keeps the same permanent URL.
+        </p>
+        <div class="meta">
+          <span class="chip">Last updated: 2026-03-04</span>
+          <span class="chip">App: OralPilot (iOS)</span>
+          <span class="chip">Support: support@oralpilot.app</span>
+        </div>
+      </section>
 
-      <div class="card">
-        <p>This EULA governs your use of OralPilot. By using the app, you agree to these terms.</p>
+      <section class="panel" aria-label="Locale availability">
+        <p>
+          Supported locales: English, Francais, Espanol, Deutsch, العربية, हिन्दी, Bahasa Indonesia, Portugues (Brasil).
+        </p>
+      </section>
+
+      <div class="toolbar">
+        <label for="localePicker">Language / Langue / Idioma</label>
+        <select id="localePicker" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="fr">Francais</option>
+          <option value="es">Espanol</option>
+          <option value="de">Deutsch</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="pt-BR">Portugues (Brasil)</option>
+        </select>
       </div>
 
-      <h2>Acceptable use</h2>
-      <ul>
-        <li>Do not use OralPilot for illegal activities.</li>
-        <li>Do not attempt to reverse engineer, abuse, or overload the service.</li>
-      </ul>
+      <section class="locale" data-locale="en" lang="en">
+        <h2>English</h2>
 
-      <h2>Subscriptions</h2>
-      <p>OralPilot may offer paid subscriptions through Apple's in-app purchase system. Pricing and billing terms are shown in the App Store at the time of purchase. You can manage or cancel subscriptions in your Apple ID settings.</p>
+        <h3>1. Scope and Acceptance</h3>
+        <p>
+          By downloading, accessing, or using OralPilot, you accept this EULA.
+          If you do not agree, do not use the app.
+          This EULA supplements Apple's Licensed Application End User License Agreement.
+          Mandatory consumer rights under your local law remain unaffected.
+        </p>
 
-      <h2>Disclaimer</h2>
-      <p>Coaching content is provided "as is" and may be incomplete or incorrect. OralPilot does not guarantee outcomes.</p>
+        <h3>2. License Grant</h3>
+        <p>
+          OralPilot grants you a limited, non-exclusive, non-transferable, revocable license to use the app
+          on Apple-branded devices you own or control, as permitted by App Store rules.
+        </p>
 
-      <h2>Contact</h2>
-      <p>Support: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a></p>
+        <h3>3. Subscriptions and Billing</h3>
+        <ul>
+          <li>Paid features are offered through Apple In-App Purchase subscriptions.</li>
+          <li>Billing is handled by Apple; pricing and taxes are shown before purchase.</li>
+          <li>Subscriptions renew automatically unless canceled at least 24 hours before renewal.</li>
+          <li>You can manage or cancel in Apple ID settings on your device.</li>
+          <li>No refunds are handled directly by OralPilot; Apple refund policies apply.</li>
+        </ul>
 
-      <hr />
-      <p class="small"><a href="./index.html">Back to Legal</a></p>
+        <h3>4. Acceptable Use</h3>
+        <ul>
+          <li>No illegal, abusive, defamatory, fraudulent, or harmful activity.</li>
+          <li>No reverse engineering, scraping, or attempts to bypass technical protections.</li>
+          <li>No interference with app stability, security, or other users.</li>
+        </ul>
+
+        <h3>5. Content, Data, and Privacy</h3>
+        <p>
+          Your rights and data handling are described in the Privacy Policy.
+          You remain responsible for how you use generated insights and coaching output.
+          OralPilot is an educational and productivity aid, not professional legal, medical, or financial advice.
+        </p>
+
+        <h3>6. Availability and Changes</h3>
+        <p>
+          Features may evolve over time.
+          OralPilot may modify, suspend, or discontinue parts of the service to improve safety,
+          compliance, reliability, or product quality.
+        </p>
+
+        <h3>7. Disclaimer and Limitation of Liability</h3>
+        <p>
+          The app is provided "as is" and "as available".
+          To the maximum extent allowed by law, OralPilot disclaims implied warranties and is not liable
+          for indirect, incidental, special, consequential, or punitive damages, or loss of data, revenue, or business.
+        </p>
+
+        <h3>8. Termination</h3>
+        <p>
+          This EULA remains in effect until terminated.
+          It terminates automatically if you materially breach its terms.
+          You may terminate it by uninstalling the app.
+        </p>
+
+        <h3>9. Governing Law</h3>
+        <p>
+          Applicable law and venue are determined by mandatory consumer law and, where permitted,
+          the law of the publisher's place of business.
+        </p>
+
+        <h3>10. Contact</h3>
+        <p>
+          Questions about this EULA: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <section class="locale" data-locale="fr" lang="fr">
+        <h2>Francais</h2>
+
+        <h3>1. Portee et acceptation</h3>
+        <p>
+          En telechargeant, accedant ou utilisant OralPilot, vous acceptez cette EULA.
+          Si vous n'etes pas d'accord, n'utilisez pas l'application.
+          Cette EULA complete le contrat de licence Apple pour applications.
+          Les droits obligatoires des consommateurs restent applicables.
+        </p>
+
+        <h3>2. Licence</h3>
+        <p>
+          OralPilot vous accorde une licence limitee, non exclusive, non cessible et revocable
+          pour utiliser l'app sur des appareils Apple que vous possedez ou controlez,
+          selon les regles de l'App Store.
+        </p>
+
+        <h3>3. Abonnements et facturation</h3>
+        <ul>
+          <li>Les fonctions payantes passent par les abonnements In-App Purchase Apple.</li>
+          <li>La facturation est geree par Apple; le prix et les taxes sont affiches avant achat.</li>
+          <li>L'abonnement se renouvelle automatiquement sauf annulation au moins 24h avant echeance.</li>
+          <li>Gestion/annulation depuis les reglages Apple ID de l'appareil.</li>
+          <li>Les remboursements suivent la politique Apple.</li>
+        </ul>
+
+        <h3>4. Usage autorise</h3>
+        <ul>
+          <li>Interdiction d'usage illegal, abusif, diffamatoire, frauduleux ou nuisible.</li>
+          <li>Interdiction de reverse engineering ou de contournement des protections techniques.</li>
+          <li>Interdiction de nuire a la stabilite, la securite ou aux autres utilisateurs.</li>
+        </ul>
+
+        <h3>5. Contenu, donnees et vie privee</h3>
+        <p>
+          Le traitement des donnees est decrit dans la Politique de confidentialite.
+          Vous restez responsable de l'usage des retours et recommandations produits.
+          OralPilot est un outil d'entrainement/productivite, pas un conseil juridique, medical ou financier.
+        </p>
+
+        <h3>6. Disponibilite et evolutions</h3>
+        <p>
+          Les fonctionnalites peuvent evoluer.
+          OralPilot peut modifier, suspendre ou arreter certaines fonctions pour la securite,
+          la conformite, la fiabilite ou la qualite du produit.
+        </p>
+
+        <h3>7. Exclusions et limitation de responsabilite</h3>
+        <p>
+          L'application est fournie "en l'etat" et "selon disponibilite".
+          Dans les limites permises par la loi, OralPilot exclut les garanties implicites
+          et n'est pas responsable des dommages indirects, incidents, speciaux, consecutifs,
+          punitifs, ni des pertes de donnees, revenus ou activite.
+        </p>
+
+        <h3>8. Resiliation</h3>
+        <p>
+          Cette EULA reste en vigueur jusqu'a resiliation.
+          Elle prend fin automatiquement en cas de violation substantielle.
+          Vous pouvez y mettre fin en desinstallant l'application.
+        </p>
+
+        <h3>9. Droit applicable</h3>
+        <p>
+          Le droit applicable et la juridiction sont determines par les regles obligatoires
+          de protection des consommateurs et, lorsque permis, par le droit du lieu d'etablissement de l'editeur.
+        </p>
+
+        <h3>10. Contact</h3>
+        <p>
+          Questions sur cette EULA: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <section class="locale" data-locale="es" lang="es">
+        <h2>Espanol</h2>
+
+        <h3>1. Alcance y aceptacion</h3>
+        <p>
+          Al descargar, acceder o usar OralPilot, aceptas este EULA.
+          Si no estas de acuerdo, no uses la aplicacion.
+          Este EULA complementa el acuerdo de licencia estandar de Apple.
+          Tus derechos obligatorios como consumidor se mantienen.
+        </p>
+
+        <h3>2. Licencia</h3>
+        <p>
+          OralPilot te concede una licencia limitada, no exclusiva, no transferible y revocable
+          para usar la app en dispositivos Apple que poseas o controles,
+          segun las reglas del App Store.
+        </p>
+
+        <h3>3. Suscripciones y facturacion</h3>
+        <ul>
+          <li>Las funciones de pago se ofrecen mediante suscripciones In-App Purchase de Apple.</li>
+          <li>Apple gestiona la facturacion; precio e impuestos se muestran antes de comprar.</li>
+          <li>La suscripcion se renueva automaticamente salvo cancelacion con al menos 24h de antelacion.</li>
+          <li>Puedes gestionar o cancelar en la configuracion de Apple ID.</li>
+          <li>Los reembolsos se rigen por las politicas de Apple.</li>
+        </ul>
+
+        <h3>4. Uso permitido</h3>
+        <ul>
+          <li>No usar la app para actividades ilegales, abusivas, fraudulentas o daninas.</li>
+          <li>No realizar ingenieria inversa ni intentar eludir protecciones tecnicas.</li>
+          <li>No interferir con la estabilidad, seguridad o uso de terceros.</li>
+        </ul>
+
+        <h3>5. Contenido, datos y privacidad</h3>
+        <p>
+          El tratamiento de datos se describe en la Politica de Privacidad.
+          Eres responsable del uso de sugerencias o analisis generados.
+          OralPilot es una herramienta educativa/productiva, no asesoria legal, medica o financiera.
+        </p>
+
+        <h3>6. Disponibilidad y cambios</h3>
+        <p>
+          Las funciones pueden cambiar con el tiempo.
+          OralPilot puede modificar, suspender o retirar partes del servicio por seguridad,
+          cumplimiento, fiabilidad o calidad del producto.
+        </p>
+
+        <h3>7. Exencion y limitacion de responsabilidad</h3>
+        <p>
+          La app se ofrece "tal cual" y "segun disponibilidad".
+          En la medida permitida por la ley, OralPilot excluye garantias implicitas
+          y no responde por danos indirectos, incidentales, especiales, consecuentes o punitivos,
+          ni por perdida de datos, ingresos o negocio.
+        </p>
+
+        <h3>8. Terminacion</h3>
+        <p>
+          Este EULA permanece vigente hasta su terminacion.
+          Se termina automaticamente si incumples de forma material.
+          Puedes terminarlo desinstalando la app.
+        </p>
+
+        <h3>9. Ley aplicable</h3>
+        <p>
+          La ley y jurisdiccion aplicables se determinan por normas obligatorias de consumo
+          y, cuando sea posible, por la ley del lugar de establecimiento del editor.
+        </p>
+
+        <h3>10. Contacto</h3>
+        <p>
+          Consultas sobre este EULA: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <section class="locale" data-locale="de" lang="de">
+        <h2>Deutsch</h2>
+
+        <h3>1. Geltungsbereich und Zustimmung</h3>
+        <p>
+          Mit Download, Zugriff oder Nutzung von OralPilot akzeptierst du diese EULA.
+          Wenn du nicht zustimmst, nutze die App nicht.
+          Diese EULA erganzt die Apple-Standardlizenzbedingungen.
+          Zwingende Verbraucherrechte bleiben unberuhrt.
+        </p>
+
+        <h3>2. Lizenz</h3>
+        <p>
+          OralPilot gewahrt dir eine beschrankte, nicht exklusive, nicht ubertragbare,
+          widerrufliche Lizenz zur Nutzung der App auf Apple-Geraten,
+          die dir gehoren oder die du kontrollierst, gemaess App-Store-Regeln.
+        </p>
+
+        <h3>3. Abonnements und Abrechnung</h3>
+        <ul>
+          <li>Kostenpflichtige Funktionen werden uber Apple In-App-Kaufe angeboten.</li>
+          <li>Apple ubernimmt die Abrechnung; Preise und Steuern werden vor Kauf angezeigt.</li>
+          <li>Abos verlangern sich automatisch, sofern nicht mindestens 24h vorher gekundigt wird.</li>
+          <li>Verwaltung/Kundigung in den Apple-ID-Einstellungen.</li>
+          <li>Erstattungen richten sich nach Apple-Richtlinien.</li>
+        </ul>
+
+        <h3>4. Zulassige Nutzung</h3>
+        <ul>
+          <li>Keine rechtswidrige, missbrauchliche, betrugerische oder schadliche Nutzung.</li>
+          <li>Kein Reverse Engineering und kein Umgehen technischer Schutzmassnahmen.</li>
+          <li>Keine Storung von Stabilitat, Sicherheit oder Nutzung durch Dritte.</li>
+        </ul>
+
+        <h3>5. Inhalte, Daten und Datenschutz</h3>
+        <p>
+          Der Umgang mit Daten ist in der Datenschutzerklarung beschrieben.
+          Du bist verantwortlich fur die Nutzung von Hinweisen und Auswertungen.
+          OralPilot ist ein Lern-/Produktivitatstool, keine Rechts-, Medizin- oder Finanzberatung.
+        </p>
+
+        <h3>6. Verfugbarkeit und Anderungen</h3>
+        <p>
+          Funktionen konnen sich weiterentwickeln.
+          OralPilot kann Funktionen aus Sicherheits-, Compliance-, Zuverlassigkeits-
+          oder Qualitatsgrunden andern, aussetzen oder einstellen.
+        </p>
+
+        <h3>7. Gewahrleistungsausschluss und Haftungsbegrenzung</h3>
+        <p>
+          Die App wird "wie besehen" und "wie verfugbar" bereitgestellt.
+          Soweit gesetzlich zulassig, schliesst OralPilot stillschweigende Gewahrleistungen aus
+          und haftet nicht fur mittelbare, zufallige, besondere, Folgeschaden oder Strafschaden,
+          sowie nicht fur Daten-, Umsatz- oder Geschaftsverluste.
+        </p>
+
+        <h3>8. Beendigung</h3>
+        <p>
+          Diese EULA gilt bis zur Beendigung.
+          Bei wesentlichem Verstoss endet sie automatisch.
+          Du kannst sie durch Deinstallation der App beenden.
+        </p>
+
+        <h3>9. Anwendbares Recht</h3>
+        <p>
+          Anwendbares Recht und Gerichtsstand richten sich nach zwingendem Verbraucherrecht
+          und, soweit zulassig, nach dem Recht am Sitz des Anbieters.
+        </p>
+
+        <h3>10. Kontakt</h3>
+        <p>
+          Fragen zur EULA: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <section class="locale rtl" data-locale="ar" lang="ar" dir="rtl">
+        <h2>العربية</h2>
+
+        <h3>1. النطاق والموافقة</h3>
+        <p>
+          من خلال تنزيل OralPilot أو الوصول إليه أو استخدامه، فإنك توافق على هذه الاتفاقية.
+          إذا لم توافق، فلا تستخدم التطبيق.
+          تكمل هذه الاتفاقية شروط ترخيص Apple القياسية.
+          تبقى حقوق المستهلك الإلزامية وفق القانون المحلي سارية.
+        </p>
+
+        <h3>2. منح الترخيص</h3>
+        <p>
+          يمنحك OralPilot ترخيصا محدودا وغير حصري وغير قابل للنقل وقابلا للإلغاء
+          لاستخدام التطبيق على أجهزة Apple التي تملكها أو تتحكم بها، وفقا لقواعد App Store.
+        </p>
+
+        <h3>3. الاشتراكات والفوترة</h3>
+        <ul>
+          <li>الميزات المدفوعة متاحة عبر اشتراكات الشراء داخل التطبيق من Apple.</li>
+          <li>تتم الفوترة بواسطة Apple، وتظهر الأسعار والضرائب قبل الشراء.</li>
+          <li>يتجدد الاشتراك تلقائيا ما لم يتم الإلغاء قبل 24 ساعة على الأقل من التجديد.</li>
+          <li>يمكنك الإدارة أو الإلغاء من إعدادات Apple ID.</li>
+          <li>تخضع عمليات الاسترداد لسياسات Apple.</li>
+        </ul>
+
+        <h3>4. الاستخدام المسموح</h3>
+        <ul>
+          <li>لا يجوز الاستخدام غير القانوني أو المسيء أو الاحتيالي أو الضار.</li>
+          <li>لا يجوز الهندسة العكسية أو تجاوز وسائل الحماية التقنية.</li>
+          <li>لا يجوز التأثير على استقرار التطبيق أو أمنه أو استخدام الآخرين له.</li>
+        </ul>
+
+        <h3>5. المحتوى والبيانات والخصوصية</h3>
+        <p>
+          توضح سياسة الخصوصية كيفية التعامل مع البيانات.
+          أنت مسؤول عن كيفية استخدام المخرجات أو التوصيات التي يقدمها التطبيق.
+          OralPilot أداة تعليمية وإنتاجية وليست استشارة قانونية أو طبية أو مالية.
+        </p>
+
+        <h3>6. التوفر والتغييرات</h3>
+        <p>
+          قد تتغير الميزات بمرور الوقت.
+          يجوز لـ OralPilot تعديل الخدمة أو تعليقها أو إيقاف أجزاء منها
+          لأسباب تتعلق بالأمان أو الامتثال أو الاعتمادية أو جودة المنتج.
+        </p>
+
+        <h3>7. إخلاء المسؤولية وتحديدها</h3>
+        <p>
+          يتم توفير التطبيق "كما هو" و"حسب التوفر".
+          إلى الحد المسموح به قانونا، يخلي OralPilot مسؤوليته عن الضمانات الضمنية
+          ولا يتحمل المسؤولية عن الأضرار غير المباشرة أو العرضية أو الخاصة أو التبعية أو العقابية
+          أو فقدان البيانات أو الإيرادات أو الأعمال.
+        </p>
+
+        <h3>8. الإنهاء</h3>
+        <p>
+          تسري هذه الاتفاقية حتى إنهائها.
+          وتنتهي تلقائيا عند حدوث إخلال جوهري بشروطها.
+          ويمكنك إنهاؤها بحذف التطبيق.
+        </p>
+
+        <h3>9. القانون الواجب التطبيق</h3>
+        <p>
+          يحدد القانون والاختصاص القضائي وفقا لقواعد حماية المستهلك الإلزامية
+          وحيثما يسمح القانون، لقانون مكان نشاط الناشر.
+        </p>
+
+        <h3>10. التواصل</h3>
+        <p>
+          للاستفسار حول هذه الاتفاقية: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <section class="locale" data-locale="hi" lang="hi">
+        <h2>हिन्दी</h2>
+
+        <h3>1. दायरा और स्वीकृति</h3>
+        <p>
+          OralPilot को डाउनलोड, एक्सेस या उपयोग करके आप इस EULA को स्वीकार करते हैं।
+          यदि आप सहमत नहीं हैं, तो ऐप का उपयोग न करें।
+          यह EULA Apple के मानक लाइसेंस समझौते के साथ पूरक रूप से लागू होती है।
+          स्थानीय कानून के अनिवार्य उपभोक्ता अधिकार सुरक्षित रहते हैं।
+        </p>
+
+        <h3>2. लाइसेंस</h3>
+        <p>
+          OralPilot आपको सीमित, गैर-विशिष्ट, गैर-हस्तांतरणीय और निरस्त करने योग्य लाइसेंस देता है,
+          ताकि आप ऐप को उन Apple उपकरणों पर उपयोग कर सकें जिन्हें आप स्वामित्व या नियंत्रण में रखते हैं,
+          App Store नियमों के अनुसार।
+        </p>
+
+        <h3>3. सदस्यता और बिलिंग</h3>
+        <ul>
+          <li>भुगतान वाली सुविधाएं Apple In-App Purchase सदस्यता के माध्यम से उपलब्ध हैं।</li>
+          <li>बिलिंग Apple द्वारा संचालित होती है; खरीद से पहले कीमत और कर दिखाए जाते हैं।</li>
+          <li>रद्द न करने पर सदस्यता स्वतः नवीनीकृत होती है (नवीनीकरण से कम से कम 24 घंटे पहले रद्द करें)।</li>
+          <li>प्रबंधन/रद्दीकरण Apple ID सेटिंग्स में किया जा सकता है।</li>
+          <li>रिफंड Apple की नीतियों के अधीन हैं।</li>
+        </ul>
+
+        <h3>4. स्वीकार्य उपयोग</h3>
+        <ul>
+          <li>गैरकानूनी, दुरुपयोगी, धोखाधड़ीपूर्ण या हानिकारक उपयोग निषिद्ध है।</li>
+          <li>रिवर्स इंजीनियरिंग या तकनीकी सुरक्षा को दरकिनार करना निषिद्ध है।</li>
+          <li>ऐप की स्थिरता, सुरक्षा या अन्य उपयोगकर्ताओं के उपयोग में बाधा न डालें।</li>
+        </ul>
+
+        <h3>5. सामग्री, डेटा और गोपनीयता</h3>
+        <p>
+          डेटा प्रबंधन का विवरण Privacy Policy में दिया गया है।
+          ऐप द्वारा दिए गए सुझावों/विश्लेषण का उपयोग आपकी जिम्मेदारी पर है।
+          OralPilot एक सीखने और उत्पादकता का उपकरण है; यह कानूनी, चिकित्सा या वित्तीय सलाह नहीं है।
+        </p>
+
+        <h3>6. उपलब्धता और परिवर्तन</h3>
+        <p>
+          सुविधाएं समय के साथ बदल सकती हैं।
+          सुरक्षा, अनुपालन, विश्वसनीयता या उत्पाद गुणवत्ता के लिए OralPilot सेवा के हिस्सों में बदलाव,
+          निलंबन या समाप्ति कर सकता है।
+        </p>
+
+        <h3>7. अस्वीकरण और दायित्व सीमा</h3>
+        <p>
+          ऐप "जैसा है" और "उपलब्धता के अनुसार" प्रदान किया जाता है।
+          लागू कानून द्वारा अनुमत अधिकतम सीमा तक OralPilot अप्रत्यक्ष, आकस्मिक, विशेष,
+          परिणामी या दंडात्मक हानि, तथा डेटा/राजस्व/व्यवसाय हानि के लिए उत्तरदायी नहीं होगा।
+        </p>
+
+        <h3>8. समाप्ति</h3>
+        <p>
+          यह EULA समाप्ति तक प्रभावी रहती है।
+          शर्तों के गंभीर उल्लंघन पर यह स्वतः समाप्त हो सकती है।
+          आप ऐप अनइंस्टॉल करके समाप्त कर सकते हैं।
+        </p>
+
+        <h3>9. लागू कानून</h3>
+        <p>
+          लागू कानून और क्षेत्राधिकार अनिवार्य उपभोक्ता कानूनों के अनुसार निर्धारित होंगे,
+          और जहां अनुमत हो, प्रकाशक के व्यवसाय-स्थान के कानून के अनुसार।
+        </p>
+
+        <h3>10. संपर्क</h3>
+        <p>
+          EULA संबंधी प्रश्न: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <section class="locale" data-locale="id" lang="id">
+        <h2>Bahasa Indonesia</h2>
+
+        <h3>1. Ruang lingkup dan persetujuan</h3>
+        <p>
+          Dengan mengunduh, mengakses, atau menggunakan OralPilot, Anda menyetujui EULA ini.
+          Jika tidak setuju, jangan gunakan aplikasi.
+          EULA ini melengkapi perjanjian lisensi standar Apple.
+          Hak konsumen wajib berdasarkan hukum setempat tetap berlaku.
+        </p>
+
+        <h3>2. Lisensi</h3>
+        <p>
+          OralPilot memberikan lisensi terbatas, non-eksklusif, tidak dapat dialihkan, dan dapat dicabut
+          untuk menggunakan aplikasi pada perangkat Apple yang Anda miliki atau kendalikan,
+          sesuai aturan App Store.
+        </p>
+
+        <h3>3. Langganan dan penagihan</h3>
+        <ul>
+          <li>Fitur berbayar disediakan melalui langganan In-App Purchase Apple.</li>
+          <li>Penagihan diproses oleh Apple; harga dan pajak ditampilkan sebelum pembelian.</li>
+          <li>Langganan diperpanjang otomatis kecuali dibatalkan minimal 24 jam sebelum perpanjangan.</li>
+          <li>Pengelolaan/pembatalan dapat dilakukan di pengaturan Apple ID.</li>
+          <li>Pengembalian dana mengikuti kebijakan Apple.</li>
+        </ul>
+
+        <h3>4. Penggunaan yang diperbolehkan</h3>
+        <ul>
+          <li>Dilarang menggunakan aplikasi untuk aktivitas ilegal, abusif, penipuan, atau merugikan.</li>
+          <li>Dilarang melakukan reverse engineering atau mengakali perlindungan teknis.</li>
+          <li>Dilarang mengganggu stabilitas, keamanan, atau penggunaan oleh pengguna lain.</li>
+        </ul>
+
+        <h3>5. Konten, data, dan privasi</h3>
+        <p>
+          Pengelolaan data dijelaskan pada Kebijakan Privasi.
+          Anda bertanggung jawab atas cara menggunakan insight atau saran yang dihasilkan.
+          OralPilot adalah alat edukasi/produktivitas, bukan nasihat hukum, medis, atau keuangan.
+        </p>
+
+        <h3>6. Ketersediaan dan perubahan</h3>
+        <p>
+          Fitur dapat berubah dari waktu ke waktu.
+          OralPilot dapat mengubah, menangguhkan, atau menghentikan sebagian layanan
+          demi keamanan, kepatuhan, keandalan, atau kualitas produk.
+        </p>
+
+        <h3>7. Penafian dan batas tanggung jawab</h3>
+        <p>
+          Aplikasi disediakan "apa adanya" dan "sesuai ketersediaan".
+          Sepanjang diizinkan hukum, OralPilot tidak bertanggung jawab atas kerugian tidak langsung,
+          insidental, khusus, konsekuensial, atau punitif, termasuk kehilangan data, pendapatan, atau bisnis.
+        </p>
+
+        <h3>8. Pengakhiran</h3>
+        <p>
+          EULA ini berlaku sampai diakhiri.
+          EULA berakhir otomatis jika terjadi pelanggaran material.
+          Anda dapat mengakhirinya dengan menghapus aplikasi.
+        </p>
+
+        <h3>9. Hukum yang berlaku</h3>
+        <p>
+          Hukum dan yurisdiksi ditentukan oleh ketentuan perlindungan konsumen yang wajib berlaku,
+          dan bila diperbolehkan, hukum tempat usaha penerbit.
+        </p>
+
+        <h3>10. Kontak</h3>
+        <p>
+          Pertanyaan terkait EULA: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <section class="locale" data-locale="pt-BR" lang="pt-BR">
+        <h2>Portugues (Brasil)</h2>
+
+        <h3>1. Escopo e aceitacao</h3>
+        <p>
+          Ao baixar, acessar ou usar o OralPilot, voce aceita este EULA.
+          Se nao concordar, nao use o aplicativo.
+          Este EULA complementa o contrato padrao de licenca da Apple.
+          Direitos obrigatorios do consumidor permanecem validos.
+        </p>
+
+        <h3>2. Licenca</h3>
+        <p>
+          O OralPilot concede uma licenca limitada, nao exclusiva, intransferivel e revogavel
+          para uso do app em dispositivos Apple sob sua posse ou controle,
+          conforme as regras da App Store.
+        </p>
+
+        <h3>3. Assinaturas e cobranca</h3>
+        <ul>
+          <li>Recursos pagos sao oferecidos por assinaturas In-App Purchase da Apple.</li>
+          <li>A cobranca e feita pela Apple; preco e impostos aparecem antes da compra.</li>
+          <li>A assinatura renova automaticamente, salvo cancelamento com ao menos 24h de antecedencia.</li>
+          <li>Voce pode gerenciar ou cancelar nas configuracoes do Apple ID.</li>
+          <li>Reembolsos seguem as politicas da Apple.</li>
+        </ul>
+
+        <h3>4. Uso permitido</h3>
+        <ul>
+          <li>Proibido uso ilegal, abusivo, difamatorio, fraudulento ou nocivo.</li>
+          <li>Proibido engenharia reversa ou tentativa de burlar protecoes tecnicas.</li>
+          <li>Proibido prejudicar estabilidade, seguranca ou uso por terceiros.</li>
+        </ul>
+
+        <h3>5. Conteudo, dados e privacidade</h3>
+        <p>
+          O tratamento de dados esta na Politica de Privacidade.
+          Voce e responsavel pelo uso dos insights e recomendacoes gerados.
+          OralPilot e ferramenta educacional/produtiva, nao consultoria juridica, medica ou financeira.
+        </p>
+
+        <h3>6. Disponibilidade e mudancas</h3>
+        <p>
+          Recursos podem evoluir com o tempo.
+          O OralPilot pode alterar, suspender ou encerrar partes do servico
+          por motivos de seguranca, conformidade, confiabilidade ou qualidade do produto.
+        </p>
+
+        <h3>7. Isencao e limitacao de responsabilidade</h3>
+        <p>
+          O aplicativo e fornecido "no estado em que se encontra" e "conforme disponibilidade".
+          No limite permitido em lei, OralPilot nao se responsabiliza por danos indiretos,
+          incidentais, especiais, consequenciais ou punitivos, nem por perda de dados,
+          receita ou negocio.
+        </p>
+
+        <h3>8. Rescisao</h3>
+        <p>
+          Este EULA permanece valido ate a rescisao.
+          Ele se encerra automaticamente em caso de violacao material.
+          Voce pode encerrar desinstalando o aplicativo.
+        </p>
+
+        <h3>9. Lei aplicavel</h3>
+        <p>
+          A lei aplicavel e o foro seguem regras obrigatorias de defesa do consumidor
+          e, quando permitido, a lei do local de estabelecimento do publicador.
+        </p>
+
+        <h3>10. Contato</h3>
+        <p>
+          Duvidas sobre este EULA: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+        </p>
+      </section>
+
+      <p class="footer">
+        <a href="./index.html">Back to Legal / Retour Legal / Volver a Legal</a>
+      </p>
     </div>
+
+    <script>
+      (function () {
+        var picker = document.getElementById("localePicker");
+        var blocks = Array.prototype.slice.call(document.querySelectorAll(".locale"));
+
+        function normalizeLocale(raw) {
+          var v = (raw || "").toLowerCase();
+          if (v.indexOf("pt-br") === 0 || v.indexOf("pt") === 0) return "pt-BR";
+          if (v.indexOf("fr") === 0) return "fr";
+          if (v.indexOf("es") === 0) return "es";
+          if (v.indexOf("de") === 0) return "de";
+          if (v.indexOf("ar") === 0) return "ar";
+          if (v.indexOf("hi") === 0) return "hi";
+          if (v.indexOf("id") === 0) return "id";
+          return "en";
+        }
+
+        function getRequestedLocale() {
+          var params = new URLSearchParams(window.location.search);
+          var q = params.get("lang");
+          if (q) return normalizeLocale(q);
+
+          var stored = localStorage.getItem("oralpilot_legal_locale");
+          if (stored) return normalizeLocale(stored);
+
+          return normalizeLocale(navigator.language || "en");
+        }
+
+        function applyLocale(locale) {
+          blocks.forEach(function (el) {
+            el.hidden = el.getAttribute("data-locale") !== locale;
+          });
+          picker.value = locale;
+
+          var active = blocks.find(function (el) {
+            return el.getAttribute("data-locale") === locale;
+          });
+          var lang = active ? active.getAttribute("lang") : "en";
+          var dir = lang === "ar" ? "rtl" : "ltr";
+          document.documentElement.lang = lang;
+          document.documentElement.dir = dir;
+
+          localStorage.setItem("oralpilot_legal_locale", locale);
+
+          var url = new URL(window.location.href);
+          url.searchParams.set("lang", locale);
+          window.history.replaceState({}, "", url.toString());
+        }
+
+        picker.addEventListener("change", function () {
+          applyLocale(normalizeLocale(picker.value));
+        });
+
+        applyLocale(getRequestedLocale());
+      })();
+    </script>
   </body>
 </html>
