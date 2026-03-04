@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OralPilot Legal</title>
+    <style>
+      :root { --fg:#0b0f14; --muted:#556070; --bg:#ffffff; --card:#f4f6f8; --link:#0a58ca; }
+      body { margin:0; font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); }
+      .wrap { max-width: 860px; margin: 0 auto; padding: 32px 18px 56px; }
+      h1 { font-size: 28px; margin: 0 0 10px; }
+      p { line-height: 1.55; color: var(--muted); margin: 0 0 14px; }
+      .grid { display:grid; grid-template-columns: 1fr; gap: 12px; margin-top: 18px; }
+      @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+      a.card { display:block; padding: 14px 16px; border-radius: 14px; background: var(--card); color: var(--fg); text-decoration: none; }
+      a.card:hover { outline: 2px solid rgba(10,88,202,0.35); }
+      .label { font-weight: 700; margin-bottom: 6px; }
+      .small { font-size: 13px; }
+      .footer { margin-top: 26px; font-size: 13px; color: var(--muted); }
+      .footer a { color: var(--link); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>OralPilot Legal</h1>
+      <p class="small">This page hosts the legal documents for the OralPilot iOS app.</p>
+
+      <div class="grid">
+        <a class="card" href="./privacy.html">
+          <div class="label">Privacy Policy</div>
+          <div class="small">How OralPilot handles audio, text, and purchases.</div>
+        </a>
+        <a class="card" href="./eula.html">
+          <div class="label">End-User License Agreement (EULA)</div>
+          <div class="small">License and subscription terms for using OralPilot.</div>
+        </a>
+      </div>
+
+      <p class="footer">
+        Support: <a href="mailto:support@oralpilot.app">support@oralpilot.app</a>
+      </p>
+    </div>
+  </body>
+</html>
